@@ -1,0 +1,228 @@
+{
+  "project_info": {
+    "project_number": "937933137760",
+    "firebase_url": "https://noes-dev.firebaseio.com",
+    "project_id": "noes-dev",
+    "storage_bucket": "noes-dev.appspot.com"
+  },
+  "client": [
+    {
+
+      "client_info": {
+        "mobilesdk_app_id": "1:937933137760:android:487a0e13451f9f3e",
+        "android_client_info": {
+          "package_name": "adeyds.noes.firebaselesson"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937933137760-saqaj8spvnr2bbb6m87t5n5davmgrcf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "adeyds.noes.firebaselesson",
+            "certificate_hash": "6089b753b93d3c4ee5131ea1a7b7babbb7604ab0"
+          }
+        },
+        {
+          "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfSEq0rdFqFU7sx6SX4KQ3PRBb2LrW8OI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937933137760:android:fe5491c9d30e26be",
+        "android_client_info": {
+          "package_name": "adeyds.noes.signintest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937933137760-ms07ldmcltnu250bqdpcpo0m1vi5els5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "adeyds.noes.signintest",
+            "certificate_hash": "6089b753b93d3c4ee5131ea1a7b7babbb7604ab0"
+          }
+        },
+        {
+          "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfSEq0rdFqFU7sx6SX4KQ3PRBb2LrW8OI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937933137760:android:52bc91a0741cbb4a",
+        "android_client_info": {
+          "package_name": "adeyds.noes.wisbejo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937933137760-ak7u305i8kmr30hl8u46bislhiqrs2g9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "adeyds.noes.wisbejo",
+            "certificate_hash": "6089b753b93d3c4ee5131ea1a7b7babbb7604ab0"
+          }
+        },
+        {
+          "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfSEq0rdFqFU7sx6SX4KQ3PRBb2LrW8OI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937933137760:android:469ff1b405dd338a",
+        "android_client_info": {
+          "package_name": "com.noes.adeyds.svoro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937933137760-66pr5dqor7qjpmcaoarjcg3lvn1c1gl1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noes.adeyds.svoro",
+            "certificate_hash": "13009d2de4c52ef69c70818495ec0d27da3512dc"
+          }
+        },
+        {
+          "client_id": "937933137760-buplr5or7pcrts6bv9g49hil89ahb90f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noes.adeyds.svoro",
+            "certificate_hash": "83ce0b2ea753cd8a81163435886ab2ebaaa3bf12"
+          }
+        },
+        {
+          "client_id": "937933137760-ebgmp0emtkoaje3nq0l7ram6ja0a344d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noes.adeyds.svoro",
+            "certificate_hash": "55349524ace9435a030e09823fd5ba9e2cad4fa0"
+          }
+        },
+        {
+          "client_id": "937933137760-eqrs37s239kn4m5r3iu6pb801mc25cki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noes.adeyds.svoro",
+            "certificate_hash": "843f4158041832283df1b0215201a08b6a4d639a"
+          }
+        },
+        {
+          "client_id": "937933137760-qde2o29f069k36nflmr3grecrn626skv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noes.adeyds.svoro",
+            "certificate_hash": "d1bc7eaad094927523425fd2c19f94f6309abd3e"
+          }
+        },
+        {
+          "client_id": "937933137760-vd8abf590h1hbf3vnfprotlv845o8je5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noes.adeyds.svoro",
+            "certificate_hash": "6089b753b93d3c4ee5131ea1a7b7babbb7604ab0"
+          }
+        },
+        {
+          "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfSEq0rdFqFU7sx6SX4KQ3PRBb2LrW8OI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937933137760-bpcud5a58s4ir0uplpa0j982nujsbuk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
