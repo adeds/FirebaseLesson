@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,5 +7,63 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+<RelativeLayout
+    android:paddingHorizontal="20dp"
+    android:layout_centerVertical="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tv_region"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:text="+62"
+        android:textSize="30sp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/telp_layout"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/tv_region"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="phone"
+            android:id="@+id/edt_telp"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="nomor telepon"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_send"
+        android:text="kirim"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/telp_layout"/>
+    <Button
+        android:id="@+id/btn_resend"
+        android:text="verif"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_send"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_resend"
+        android:id="@+id/verif_layout"
+        >
+        <EditText
+            android:imeOptions="actionDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_verif"
+            android:hint="Masukkan kode verifikasi"/>
+    </android.support.design.widget.TextInputLayout>
+</RelativeLayout>
+
+</RelativeLayout>

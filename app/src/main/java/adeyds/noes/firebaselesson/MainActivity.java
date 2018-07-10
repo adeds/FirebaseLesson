@@ -1,7 +1,9 @@
 package adeyds.noes.firebaselesson;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -41,16 +44,17 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar loading;
     private TextView txtEmptyInfo;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private Button btnLogout;
 
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
     private DatabaseReference connectedRef;
     private DatabaseReference lastOnlineRef;
-    private DatabaseReference myConnectionsRef ;
+    private DatabaseReference myConnectionsRef;
 
     private TodoListAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
-
+    private LoginActivity loginActivity;
     private String todoItem, todoId;
 
     @Override
@@ -58,13 +62,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         listTodo = findViewById(R.id.listTodo);
         edtTodo = findViewById(R.id.edtTodo);
         loading = findViewById(R.id.loading);
         txtEmptyInfo = findViewById(R.id.txtEmptyInfo);
         swipeRefreshLayout = findViewById(R.id.swiper);
+        btnLogout = findViewById(R.id.btn_logout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginActivity = new LoginActivity(true);
+                finishAffinity();
+            }
+        });
 
         adapter = new TodoListAdapter(this);
         linearLayoutManager = new LinearLayoutManager(this);
@@ -73,15 +84,15 @@ public class MainActivity extends AppCompatActivity {
         listTodo.setLayoutManager(linearLayoutManager);
         listTodo.addItemDecoration(new SimpleDividerItemDecoration(this));
 
-        mFirebaseInstance = FirebaseDatabase.getInstance();
+            mFirebaseInstance = FirebaseDatabase.getInstance();
 
-        mFirebaseDatabase = mFirebaseInstance.getReference(TABLE_TODOS);
-        //nama tabel
+            mFirebaseDatabase = mFirebaseInstance.getReference(TABLE_TODOS);
+
         lastOnlineRef = mFirebaseInstance.getReference("/users/myName/lastOnline");
 
         connectedRef = mFirebaseInstance.getReference(".info/connected");
 
-         myConnectionsRef = mFirebaseInstance.getReference("users/myName/connections");
+        myConnectionsRef = mFirebaseInstance.getReference("users/myName/connections");
         connectRef();
         mFirebaseDatabase.keepSynced(true);
 
@@ -154,30 +165,32 @@ public class MainActivity extends AppCompatActivity {
 
     private void connectRef() {
         connectedRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                boolean connected = snapshot.getValue(Boolean.class);
-                if (connected) {
-                    DatabaseReference con = myConnectionsRef.push();
+                                               @Override
+                                               public void onDataChange(DataSnapshot snapshot) {
+                                                   boolean connected = snapshot.getValue(Boolean.class);
+                                                   if (connected) {
+                                                       DatabaseReference con = myConnectionsRef.push();
 
-                    // when this device disconnects, remove it
-                    con.onDisconnect().removeValue();
+                                                       // when this device disconnects, remove it
+                                                       con.onDisconnect().removeValue();
 
-                    // when I disconnect, update the last time I was seen online
-                    lastOnlineRef.onDisconnect().setValue(ServerValue.TIMESTAMP);
+                                                       // when I disconnect, update the last time I was seen online
+                                                       lastOnlineRef.onDisconnect().setValue(ServerValue.TIMESTAMP);
 
-                    // add this device to my connections list
-                    // this value could contain info about the device or a timestamp too
-                    con.setValue(Boolean.TRUE);
+                                                       // add this device to my connections list
+                                                       // this value could contain info about the device or a timestamp too
+                                                       con.setValue(Boolean.TRUE);
 
-                }}
+                                                   }
+                                               }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                                               @Override
+                                               public void onCancelled(DatabaseError databaseError) {
 
-            }
-        }
-        );}
+                                               }
+                                           }
+        );
+    }
 
     public void setDone(String id, boolean isDone) {
         mFirebaseDatabase.child(id).child(IS_DONE).setValue(isDone);
