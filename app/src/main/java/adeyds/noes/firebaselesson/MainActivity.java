@@ -1,11 +1,9 @@
 package adeyds.noes.firebaselesson;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,7 +21,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.OnDisconnect;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
@@ -34,7 +31,7 @@ import adeyds.noes.firebaselesson.model.Todo;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String TABLE_TODOS = "users/myName/todos";
+    private static final String TABLE_TODOS = "users/";
     //nama tabel
     private static final String APP_TITLE = "app_title";
     private static final String IS_DONE = "is_done";
@@ -55,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
     private TodoListAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
     private LoginActivity loginActivity;
-    private String todoItem, todoId;
+    private String todoItem, todoId, noTelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        noTelp = getIntent().getStringExtra("NOTELP");
         listTodo = findViewById(R.id.listTodo);
         edtTodo = findViewById(R.id.edtTodo);
         loading = findViewById(R.id.loading);
@@ -84,15 +81,15 @@ public class MainActivity extends AppCompatActivity {
         listTodo.setLayoutManager(linearLayoutManager);
         listTodo.addItemDecoration(new SimpleDividerItemDecoration(this));
 
-            mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseInstance = FirebaseDatabase.getInstance();
 
-            mFirebaseDatabase = mFirebaseInstance.getReference(TABLE_TODOS);
+        mFirebaseDatabase = mFirebaseInstance.getReference(TABLE_TODOS + noTelp + "/todos");
 
-        lastOnlineRef = mFirebaseInstance.getReference("/users/myName/lastOnline");
+        lastOnlineRef = mFirebaseInstance.getReference("/users/" + noTelp + "/lastOnline");
 
         connectedRef = mFirebaseInstance.getReference(".info/connected");
 
-        myConnectionsRef = mFirebaseInstance.getReference("users/myName/connections");
+        myConnectionsRef = mFirebaseInstance.getReference("users/" + noTelp + "/connections");
         connectRef();
         mFirebaseDatabase.keepSynced(true);
 

@@ -164,7 +164,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             //Sign In Berhasil
-                            startActivityForResult(new Intent(LoginActivity.this, MainActivity.class), 900);
+                            startActivityForResult(new Intent(LoginActivity.this, MainActivity.class).putExtra("NOTELP", No_Telepon), 900);
                             finish();
                         }else{
                             //Sign In Gagal
